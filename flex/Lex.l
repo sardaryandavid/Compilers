@@ -30,7 +30,7 @@ f[aA][lL][sS][eE] { printf("%s KEYWORD, %s %s\n", tc, tv, yytext); }
 "(" { printf("%s OP, %s LEFT BRACKET\n", tc, tv); }
 ")" { printf("%s OP, %s RIGHT BRACKET\n", tc, tv); }
 
-[1-9]+[0-9]* { printf("NUMBER %s\n", yytext); }
+[1-9]+[0-9]*.?[0-9]+ { printf("NUMBER %s\n", yytext); }
 [a-z_]+[a-zA-Z_]* { printf("%s VARIABLE, %s %s\n", tc, tv, yytext); }
 [A-Z_]+[a-zA-Z_]* { printf("%s TYPE ID, %s %s\n", tc, tv, yytext); }
 "\""[a-zA-Z\n]*"\"" { printf("%s STRING, %s %s\n", tc, tv, yytext); }
